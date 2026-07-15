@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stretch Bear</title> 
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    
+    <body>
+        
+        <div class="header">
+            <button id="ListButton" onclick="listStretches()">☰</button>
+            <h1>Stretch Bear</h1>
+            <button id="RestartButton" onclick="restartTimer()">Restart</button>
+        </div>
+        
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+
+
+
+
+        <h4 id="CurrentStretch">Current Stretch</h4>
+       
+
+
+
+        <div id="stretchSidebar" class="sidebar">
+        <button id="closeSidebarButton">x</button>
+
+        <h2>Stretches</h2>
+
+        <input
+            type="text"
+            id="stretchInput"
+            placeholder="Enter a stretch"
+        >
+
+        <button id="addStretchButton">+</button>
+
+        <ul id="stretchList"></ul>
+        </div>
+
+
+        <img id="image" src="./Images/Stretch Bear.JPG" alt="This Is Logo">
+
+
+        <div id="timerPopup" class="timer-popup">
+            <h2 id="timerDisplay">30</h2>
+        </div>
+
+
+
+        <div id="Start" class="start">
+
+            <dialog id="myCustomAlert">
+                <p>Add a stretch!</p>
+                <button onclick="document.getElementById('myCustomAlert').close()">OK</button>
+            </dialog>
+   
+            <button id="StartButton" onclick="startTimer()">▶</button>
+
+        </div>
+        
+    <script src="script.js"></script>
+    </body>
+
+
+
+</html>
