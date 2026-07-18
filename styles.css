@@ -28,7 +28,7 @@
     transform: translateX(0);
 }
 
-h4 {
+h2 {
     text-align: center;
 }
 
@@ -82,4 +82,34 @@ img {
 #timerDisplay {
     font-size: 60px;
     margin: 0;
+}
+
+
+#addStretchButton {
+    cursor: pointer;
+    
+}
+
+.stretch-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: black; /* Ensuring visibility against orange */
+}
+
+/* Styles your minus button */
+.remove-stretch-btn {
+    background-color: transparent;
+    border: 1px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-weight: bold;
+}
+
+.remove-stretch-btn:hover {
+    background-color: rgba(4, 0, 0, 0.1);
 }

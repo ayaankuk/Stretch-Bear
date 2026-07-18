@@ -9,6 +9,7 @@ const closeSidebarButton = document.getElementById("closeSidebarButton");
 const startButton = document.getElementById("StartButton");
 const restartButton = document.getElementById("RestartButton");
 
+
 // Sidebar inputs and list declarations
 const stretchInput = document.getElementById("stretchInput");
 const addStretchButton = document.getElementById("addStretchButton");
@@ -18,6 +19,7 @@ const stretchList = document.getElementById("stretchList");
 const currentStretchDisplay = document.getElementById("CurrentStretch");
 const timerDisplay = document.getElementById("timerDisplay");
 const progressBar = document.getElementById("progressBar");
+const timerPopup = document.querySelector(".timer-popup");
 
 let stretches = [];
 let currentStretchIndex = 0;
@@ -35,6 +37,7 @@ closeSidebarButton.addEventListener("click", function () {
 
 
 // adding stretches logic
+
 addStretchButton.addEventListener("click", function () {
     const stretchName = stretchInput.value.trim();
 
@@ -44,13 +47,33 @@ addStretchButton.addEventListener("click", function () {
 
     stretches.push(stretchName);
 
-    const listItem = document.createElement("li");
-    listItem.textContent = stretchName;
+    
+    const template = document.getElementById("stretchItemTemplate");
+    const clone = template.content.cloneNode(true);
 
-    stretchList.appendChild(listItem);
+    
+    const textSpan = clone.querySelector(".stretch-text");
+    textSpan.textContent = stretchName;
+
+    
+    const removeButton = clone.querySelector(".remove-stretch-btn");
+    removeButton.addEventListener("click", function (event) {
+        
+        const index = stretches.indexOf(stretchName);
+        if (index > -1) {
+            stretches.splice(index, 1);
+        }
+        
+        
+        event.target.closest(".stretch-item").remove();
+    });
+
+    
+    stretchList.appendChild(clone);
 
     stretchInput.value = "";
 });
+
 
 
 
@@ -68,6 +91,8 @@ function startTimer() {
     if (timerInterval !== null) {
         return;
     }
+
+
 
     timerPopup.classList.add("show");
 
@@ -152,6 +177,7 @@ restartButton.addEventListener("click", function () {
 
 function restartTimer() {
     clearInterval(timerInterval);
+    timerPopup.classList.remove("show");
 
     timerInterval = null;
     currentStretchIndex = 0;

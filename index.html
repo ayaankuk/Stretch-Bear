@@ -24,7 +24,7 @@
 
 
 
-        <h4 id="CurrentStretch">Current Stretch</h4>
+        <h2 id="CurrentStretch">Current Stretch</h2>
        
 
 
@@ -41,9 +41,18 @@
         >
 
         <button id="addStretchButton">+</button>
+        
 
-        <ul id="stretchList"></ul>
+        <ul class="stretchItem" id="stretchList"></ul>
         </div>
+
+
+        <template id="stretchItemTemplate">
+            <li class="stretch-item">
+                <span class="stretch-text"></span>
+                <button class="remove-stretch-btn">X</button>
+            </li>
+        </template>
 
 
         <img id="image" src="./Images/Stretch Bear.JPG" alt="This Is Logo">
