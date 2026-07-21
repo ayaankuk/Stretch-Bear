@@ -52,12 +52,14 @@ img {
 #ListButton {
    background-color: orange;
    cursor: pointer;
+   border-radius: 30%;
 
 }
 
 #RestartButton {
     background-color: orange;
     cursor: pointer;
+    border-radius: 30%;
 
 
 }
