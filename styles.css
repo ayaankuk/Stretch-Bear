@@ -92,13 +92,21 @@ img {
     
 }
 
-.stretch-item {
+.stretchItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
     font-size: 18px;
     color: black; /* Ensuring visibility against orange */
+}
+
+#image {
+    display: block;
+    margin: 20px auto;   /* Centers horizontally */
+    width: 550px;        /* Adjust size */
+    height: auto;        /* Keeps aspect ratio */
+   
 }
 
 /* Styles your minus button */
