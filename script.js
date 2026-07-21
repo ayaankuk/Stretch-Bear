@@ -18,13 +18,16 @@ const stretchList = document.getElementById("stretchList");
 // timer and restart declarations
 const currentStretchDisplay = document.getElementById("CurrentStretch");
 const timerDisplay = document.getElementById("timerDisplay");
-const progressBar = document.getElementById("progressBar");
 const timerPopup = document.querySelector(".timer-popup");
+
+// progress bar declerations
+const progressBar = document.getElementById("progressBar");
 
 let stretches = [];
 let currentStretchIndex = 0;
 let timeLeft = 30;
 let timerInterval = null;
+let progress = 0;
 
 
 listButton.addEventListener("click", function () {
@@ -98,6 +101,7 @@ function startTimer() {
 
     currentStretchIndex = 0;
     timeLeft = 30;
+    updateProgressBar();
 
     currentStretchDisplay.textContent =
         stretches[currentStretchIndex];
@@ -106,6 +110,7 @@ function startTimer() {
 
     timerInterval = setInterval(function () {
         timeLeft--;
+        updateProgressBar();
 
         timerDisplay.textContent = timeLeft;
 
@@ -115,6 +120,7 @@ function startTimer() {
             if (currentStretchIndex >= stretches.length) {
                 clearInterval(timerInterval);
                 timerInterval = null;
+                progressBar.style.width = "100%";
 
                 currentStretchDisplay.textContent =
                     "All stretches complete!";
@@ -207,6 +213,7 @@ function updateProgressBar() {
     progressBar.style.width =
         progressPercentage + "%";
 }
+
 
 
 

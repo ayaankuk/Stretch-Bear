@@ -113,3 +113,27 @@ img {
 .remove-stretch-btn:hover {
     background-color: rgba(4, 0, 0, 0.1);
 }
+
+
+
+/* Container holding the progress bar track */
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden; /* Keeps the inner bar inside the rounded corners */
+  margin: 10px auto;
+ 
+  
+}
+
+/* The expanding colored loader bar */
+.progressBar {
+  height: 100%;
+  width: 0%; /* Initial progress start point */
+  background-color: rgb(254, 164, 2); /* Blue bar color */
+  border-radius: 20px 0 0 20px;
+  transition: width 0.1s ease-in-out; /* Smooth expansion animation */
+}
