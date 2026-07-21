@@ -27,7 +27,7 @@ let stretches = [];
 let currentStretchIndex = 0;
 let timeLeft = 30;
 let timerInterval = null;
-let progress = 0;
+
 
 
 listButton.addEventListener("click", function () {
@@ -144,37 +144,9 @@ function startTimer() {
     }, 1000);
 }
 
-function moveToNextStretch() {
-    currentStretchIndex++;
 
-    if (currentStretchIndex >= stretches.length) {
-        finishWorkout();
-        return;
-    }
 
-    timeLeft = 30;
 
-    currentStretchDisplay.textContent =
-        stretches[currentStretchIndex];
-
-    timerDisplay.textContent = timeLeft;
-
-    updateProgressBar();
-}
-
-// stopping exercises logic
-function finishWorkout() {
-    clearInterval(timerInterval);
-
-    timerInterval = null;
-
-    currentStretchDisplay.textContent =
-        "All stretches complete!";
-
-    timerDisplay.textContent = "0";
-
-    progressBar.style.width = "100%";
-}
 
 // restart logic
 restartButton.addEventListener("click", function () {
