@@ -1,0 +1,22 @@
+{
+  "name": "Stretch Bear",
+  "short_name": "Stretch Bear",
+  "description": "Create and complete timed stretching routines.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffa500",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./Images/Stretch Bear.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./Images/Stretch Bear.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
